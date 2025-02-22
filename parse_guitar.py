@@ -34,6 +34,7 @@ def parse_gpt5(file_path):
         return []
 
     events = []
+    seen_events = set() # Keep track of seen events to ensure uniqueness
     
     # Loop through each track that is not a percussion track.
     for track in song.tracks:
@@ -50,30 +51,31 @@ def parse_gpt5(file_path):
                         
                         # For each note in the beat, assume it starts at current_time
                         for note in beat.notes:
-
+                            note_start_seconds = current_time
                             # Debugging (can't figure out why it's not reading the fret number):
-                            print("Note object attributes: ", dir(note))
-                            fret_val = getattr(note, 'fret', None) or getattr(note, 'fret_val', None)
-                            if fret_val is None:
-                                print("No fret info was found for note on string", note.string)
-                                fret_val = -1 # Add placeholder value accordingly
+                            # 0 fret now indicates open string
+                            string = note.string
+                            fret_temp = note.value
+                            start_time = round(note_start_seconds, 3)
 
-                            note_start_seconds = current_time  # No per-note offset available
-                            event = {
-                                'string': note.string,          # Guitar string number (typically 1 to 6)
-                                'fret': fret_val, # Fret number (-1 indicates open string) -- Fix this
-                                'start': round(note_start_seconds, 3),  # Start time in seconds
-                                'duration': round(beat_duration_seconds, 3),  # Duration in seconds
-                                'velocity': note.velocity       # Dynamic level, if available
-                            }
-                            events.append(event)
+
+                            event_tuple = (string, fret_temp, start_time)
+
+                            if event_tuple not in seen_events:
+                                seen_events.add(event_tuple)
+                                events.append({
+                                    'string': string,
+                                    'fret': fret_temp,
+                                    'start': start_time
+                                })
+
                         # Update running time after processing the beat.
                         current_time += beat_duration_seconds
-    return events
+    return sorted(events, key=lambda x: x['start'])
 
 if __name__ == '__main__':
     # Replace with the path to your .gpt5 file
-    file_path = 'tabs\god-save-the-queen.gp5'
+    file_path = 'tabs/o-canada.gp5'
     events = parse_gpt5(file_path)
     
     if events:

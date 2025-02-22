@@ -84,7 +84,7 @@ def parse_gpt5(file_path):
     return sorted(events, key=lambda x: x['start'])
 
 if __name__ == '__main__':
-    file_path = 'tabs/o-canada.gp5'
+    file_path = 'tabs/god-save-the-queen.gp5'
     events = parse_gpt5(file_path)
 
     if events:

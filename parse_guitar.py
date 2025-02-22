@@ -46,14 +46,18 @@ def parse_gpt5(file_path):
                     voice_time = current_time  # Start voice_time at the same time as current_time
 
                     for beat in voice.beats:
-                        # Skip empty beats (rests or beats with no notes)
-                        if not beat.notes:
-                            continue
-
-                        beat_duration_ticks = beat.duration.time  # This might be in ticks
+                        # Calculate the duration of the beat, whether it is a rest or not
+                        beat_duration_ticks = beat.duration.time  # Duration in ticks
                         beat_duration_beats = beat_duration_ticks / TICKS_PER_BEAT  # Convert to beats
                         beat_duration_seconds = beat_duration_beats * seconds_per_beat  # Convert to seconds
                         print(f"Beat duration (seconds): {beat_duration_seconds}")
+
+                        # If the beat has no notes (rest), we still need to add the duration to the running time
+                        if not beat.notes:
+                            voice_time += beat_duration_seconds
+                            print(f"Rest duration (seconds): {beat_duration_seconds}")
+                            print("Skipping beat with no notes")
+                            continue  # Skip the processing for this beat
 
                         # Process all notes in this beat
                         for note in beat.notes:
@@ -83,7 +87,7 @@ def parse_gpt5(file_path):
 
     return sorted(events, key=lambda x: x['start'])
 
-file_name = "o-canada"
+file_name = "god-save-the-queen"
 if __name__ == '__main__':
     file_path = f'tabs/{file_name}.gp5'
     events = parse_gpt5(file_path)

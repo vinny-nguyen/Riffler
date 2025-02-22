@@ -3,6 +3,8 @@ import time
 import numpy as np
 import sounddevice as sd
 
+from parse_guitar import file_name
+
 def precise_sleep(duration_ms):
     start = time.perf_counter_ns()
     while (time.perf_counter_ns() - start < (duration_ms * 1e6)):
@@ -14,7 +16,7 @@ def play_tone(frequency=440, duration=0.01, sample_rate=44100):
     wave = 0.5 * np.sin(2 * np.pi * frequency * t)  # Amplitude 0.5 to avoid clipping
     sd.play(wave, samplerate=sample_rate)
 
-with open("guitar_events.json", "r") as file:
+with open(f"{file_name}.json", "r") as file:
     events = json.load(file)
 
 timestamp = 0 # In milliseconds

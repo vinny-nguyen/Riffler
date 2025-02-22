@@ -83,12 +83,13 @@ def parse_gpt5(file_path):
 
     return sorted(events, key=lambda x: x['start'])
 
+file_name = "god-save-the-queen"
 if __name__ == '__main__':
-    file_path = 'tabs/god-save-the-queen.gp5'
+    file_path = f'tabs/{file_name}.gp5'
     events = parse_gpt5(file_path)
 
     if events:
-        with open('guitar_events.json', 'w') as f:
+        with open(f'{file_name}.json', 'w') as f:
             json.dump(events, f, indent=2)
         print("Parsed events written to guitar_events.json")
     else:

@@ -34,5 +34,6 @@ while event_index < total_events:
         print(f"At {event["start"]}ms: Play string {event["string"]} at fret {event["fret"]}")
         event_index += 1
 
-    timestamp += 10
-    precise_sleep(10)
+    timestamp += 1
+    precise_sleep(1)
+time.sleep(1)

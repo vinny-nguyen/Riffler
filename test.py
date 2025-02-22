@@ -1,7 +1,7 @@
 import guitarpro
 import json
 
-TICKS_PER_BEAT = 960  # Guitar Pro's default tick resolution per quarter note
+TICKS_PER_BEAT = 480  # Guitar Pro's default tick resolution per quarter note
 
 def get_tempo(measure):
     """Attempts to retrieve the tempo (BPM) for a measure. Defaults to 120 BPM if not found."""
@@ -33,18 +33,12 @@ def parse_gpt5(file_path):
 
     for track in song.tracks:
         if not track.isPercussionTrack:
-            current_time = 0.0  # Running time in seconds for the entire measure
+            current_time = 0.0  # Running time in seconds
             for measure in track.measures:
                 bpm = get_tempo(measure)
                 seconds_per_beat = 60.0 / bpm  # Convert BPM to seconds per beat
 
-                # Initialize max_time for this measure
-                max_time_in_measure = 0.0
-
-                # Process all voices but keep current_time consistent across voices
                 for voice in measure.voices:
-                    voice_time = current_time  # Start voice_time at the same time as current_time
-
                     for beat in voice.beats:
                         # Skip empty beats (rests or beats with no notes)
                         if not beat.notes:
@@ -55,11 +49,11 @@ def parse_gpt5(file_path):
                         beat_duration_seconds = beat_duration_beats * seconds_per_beat  # Convert to seconds
                         print(f"Beat duration (seconds): {beat_duration_seconds}")
 
-                        # Process all notes in this beat
+                        # Use the current time before incrementing
                         for note in beat.notes:
                             string = note.string
                             fret = note.value
-                            start_time = round(voice_time, 3)  # Get the current time before incrementing
+                            start_time = round(current_time, 3)
 
                             event_tuple = (string, fret, start_time)
                             if event_tuple not in seen_events:
@@ -67,29 +61,14 @@ def parse_gpt5(file_path):
                                 events.append({
                                     'string': string,
                                     'fret': fret,
-                                    'start': start_time * 1000  # In milliseconds
+                                    'start': start_time * 1000
                                 })
 
-                        # Now update the voice_time **after** processing all notes in this beat
-                        voice_time += beat_duration_seconds
-                        print(f"Updated voice_time: {voice_time}")
+                        # Now update the running time **after** processing this beat
+                        current_time += beat_duration_seconds
+                        print(f"Updated current time: {current_time}")
                         print("END BEAT")
-
-                    # Update the max_time_in_measure based on the current voice's final time
-                    max_time_in_measure = max(max_time_in_measure, voice_time)
-
-                # After all voices are processed, update current_time to the max time in this measure
-                current_time = max_time_in_measure
 
     return sorted(events, key=lambda x: x['start'])
 
-if __name__ == '__main__':
-    file_path = 'tabs/o-canada.gp5'
-    events = parse_gpt5(file_path)
-
-    if events:
-        with open('guitar_events.json', 'w') as f:
-            json.dump(events, f, indent=2)
-        print("Parsed events written to guitar_events.json")
-    else:
-        print("No events parsed.")
+parse_gpt5("tabs/test.gp5")

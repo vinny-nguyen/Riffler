@@ -5,6 +5,7 @@ the songs will be Canadian classics since everyone in Canada these days are beco
 tariffs, we'll have to stand with each other as a community, as a country, as Canadians.
 
 What we'll need to do:
-* Find a dataset of 20 Canadian songs in guitar tabs/midi
+* Find a dataset of 20 Canadian songs in guitar tabs/MIDI
 * Make a Python script that'll automatically parse through the guitar songs' data
 * Manually adjust the MIDI/tabs for the notes and timings to put it into Arduino
+* Guitar will play random Canadian songs from the collection that we chose -> Useless/Unique Hack

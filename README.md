@@ -21,6 +21,6 @@ tariffs, we'll have to stand with each other as a community, as a country, as Ca
 * Modify the parsed JSON file to the right fret numbers
 
 **How to get the GuitarPro (.gp5) files:**
-* Find desired tabs on [](songsterr.com)
-* Download .gp5 file from [](https://www.songsterr-downloader.com/)
+* Find desired tabs on songsterr.com
+* Download .gp5 file from https://www.songsterr-downloader.com/
 * Run script

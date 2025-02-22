@@ -1,0 +1,884 @@
+[
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 0.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 2,
+    "start": 0.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 480.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 2,
+    "start": 480.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": -1,
+    "start": 960.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": -1,
+    "start": 960.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": -1,
+    "start": 960.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": -1,
+    "start": 1440.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 6,
+    "fret": 2,
+    "start": 1920.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 6,
+    "fret": 3,
+    "start": 2400.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 2,
+    "start": 2880.0,
+    "duration": 720.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 3600.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": -1,
+    "start": 3840.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": -1,
+    "start": 4320.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": 2,
+    "start": 4800.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": 4,
+    "start": 5280.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 2,
+    "start": 5760.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 5760.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 2,
+    "start": 6240.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 6240.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 3,
+    "start": 6720.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": -1,
+    "start": 6720.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": -1,
+    "start": 7200.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": 2,
+    "start": 7680.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 6,
+    "fret": 3,
+    "start": 8160.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 2,
+    "start": 8640.0,
+    "duration": 720.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 8640.0,
+    "duration": 720.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": -1,
+    "start": 9360.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 2,
+    "start": 9360.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 9600.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": -1,
+    "start": 10080.0,
+    "duration": 720.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": 1,
+    "start": 10800.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": 2,
+    "start": 11040.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": -1,
+    "start": 11520.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": -1,
+    "start": 11520.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": -1,
+    "start": 11520.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 12000.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 2,
+    "start": 12000.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 2,
+    "start": 12480.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": -1,
+    "start": 12480.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 6,
+    "fret": 3,
+    "start": 12960.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": -1,
+    "start": 13440.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": -1,
+    "start": 13920.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 14400.0,
+    "duration": 1440.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": 4,
+    "start": 14400.0,
+    "duration": 1440.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": 5,
+    "start": 15840.0,
+    "duration": 1440.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 5,
+    "start": 17280.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 17280.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 2,
+    "start": 17280.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 5,
+    "start": 17760.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 17760.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 2,
+    "start": 17760.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 5,
+    "start": 18240.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 18240.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": -1,
+    "start": 18720.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": 4,
+    "start": 19200.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 2,
+    "start": 19680.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 5,
+    "start": 20160.0,
+    "duration": 720.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 7,
+    "start": 20160.0,
+    "duration": 720.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 3,
+    "start": 20880.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 5,
+    "start": 20880.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 2,
+    "start": 21120.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 21120.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": -1,
+    "start": 21600.0,
+    "duration": 720.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": 5,
+    "start": 22320.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": 4,
+    "start": 22560.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 3,
+    "start": 23040.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 2,
+    "start": 23040.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 2,
+    "start": 23040.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 3,
+    "start": 23520.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 2,
+    "start": 23520.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 2,
+    "start": 23520.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 3,
+    "start": 24000.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 2,
+    "start": 24000.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 2,
+    "start": 24000.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": -1,
+    "start": 24480.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": 4,
+    "start": 24960.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": 2,
+    "start": 25440.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 3,
+    "start": 25920.0,
+    "duration": 720.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 5,
+    "start": 25920.0,
+    "duration": 720.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 2,
+    "start": 26640.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 26640.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": -1,
+    "start": 26880.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 2,
+    "start": 26880.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": -1,
+    "start": 27360.0,
+    "duration": 1440.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 2,
+    "start": 28800.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 2,
+    "start": 28800.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 3,
+    "start": 29280.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": -1,
+    "start": 29280.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 2,
+    "start": 29520.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 2,
+    "start": 29520.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": -1,
+    "start": 29760.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": -1,
+    "start": 29760.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 30000.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": 4,
+    "start": 30000.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": -1,
+    "start": 30240.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 6,
+    "fret": 3,
+    "start": 30720.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 6,
+    "fret": 2,
+    "start": 30960.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 6,
+    "fret": -1,
+    "start": 31200.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": 2,
+    "start": 31440.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 2,
+    "start": 31680.0,
+    "duration": 720.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 2,
+    "start": 31680.0,
+    "duration": 720.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 3,
+    "start": 32400.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": -1,
+    "start": 32400.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 5,
+    "start": 32640.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 32640.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 5,
+    "start": 32640.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": -1,
+    "start": 33120.0,
+    "duration": 720.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": 2,
+    "start": 33840.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": 4,
+    "start": 34080.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": 7,
+    "start": 34560.0,
+    "duration": 240.0,
+    "velocity": 95
+  },
+  {
+    "string": 1,
+    "fret": -1,
+    "start": 34800.0,
+    "duration": 120.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 10,
+    "start": 34800.0,
+    "duration": 120.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 8,
+    "start": 34920.0,
+    "duration": 120.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 7,
+    "start": 35040.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": 7,
+    "start": 35040.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 5,
+    "start": 35520.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": 6,
+    "start": 35520.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": 5,
+    "start": 35520.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 8,
+    "start": 36000.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 3,
+    "fret": -1,
+    "start": 36000.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": -1,
+    "start": 36480.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": -1,
+    "start": 36960.0,
+    "duration": 480.0,
+    "velocity": 95
+  },
+  {
+    "string": 2,
+    "fret": 3,
+    "start": 37440.0,
+    "duration": 1440.0,
+    "velocity": 95
+  },
+  {
+    "string": 4,
+    "fret": 4,
+    "start": 37440.0,
+    "duration": 1440.0,
+    "velocity": 95
+  },
+  {
+    "string": 5,
+    "fret": 5,
+    "start": 38880.0,
+    "duration": 1440.0,
+    "velocity": 95
+  }
+]

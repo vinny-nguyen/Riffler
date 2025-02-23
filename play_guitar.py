@@ -25,7 +25,27 @@ timestamp = 0 # In milliseconds
 event_index = 0
 total_events = len(events)
 
+mapping = {
+    "S3F0": 0,
+    "S3F2": 1,
+    "S2F0": 2,
+    "S2F1": 3,
+    "S2F2": 4,
+    "S2F3": 5,
+    "S1F0": 6,
+    "S1F2": 7,
+    "S1F3": 8,
+    # Now onward are bass notes
+    "S6F0": 9,
+    "S6F3": 10,
+    "S5F0": 11,
+    "S5F2": 12,
+    "S4F0": 13,
+}
+
 while event_index < total_events:
+    instruction_temp = "00000000000000"
+    instruction_list = list(instruction_temp)
     # For all events with same timestamp
     played = False
     while event_index < total_events and events[event_index]["start"] == timestamp:
@@ -33,9 +53,15 @@ while event_index < total_events:
             play_tone()
             played = True
         event = events[event_index]
-        print(f"At {event["start"]}ms: Play string {event["string"]} at fret {event["fret"]}")
+
+        instruction_list[mapping[event['comb']]] = '1'
+        instruction = ''.join(instruction_list)
+
+        print(instruction)
+        
+        # print(f"At {event["start"]}ms: Play string {event["string"]} at fret {event["fret"]}")
         event_index += 1
 
-    timestamp += 1
-    precise_sleep(1)
+    timestamp += 5
+    precise_sleep(5)
 time.sleep(1)

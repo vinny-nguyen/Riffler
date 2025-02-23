@@ -69,8 +69,7 @@ def parse_gpt5(file_path):
                             if event_tuple not in seen_events:
                                 seen_events.add(event_tuple)
                                 events.append({
-                                    'string': string,
-                                    'fret': fret,
+                                    'comb': "S" + str(string) + "F" + str(fret),
                                     'start': start_time * 1000  # In milliseconds
                                 })
 
@@ -87,7 +86,7 @@ def parse_gpt5(file_path):
 
     return sorted(events, key=lambda x: x['start'])
 
-file_name = "god-save-the-queen"
+file_name = "o-canada-bass"
 if __name__ == '__main__':
     file_path = f'tabs/{file_name}.gp5'
     events = parse_gpt5(file_path)

@@ -7,6 +7,9 @@ Servo s4;
 Servo s5;
 Servo s6;
 
+const int CMD_SIZE = 4;
+char received_command[9]
+
 bool CENTER_SERVO = true;
 int CENTER_ANGLE = 90;
 
@@ -123,7 +126,40 @@ void setup() {
   strum(0,0,0,0,0,0);
 }
 
+void pressFret(int fret_num) {
+  // Add implementation
+}
+
+void receiveCommand() {
+  if (Serial.available() >= 4) {
+    int len = Serial.readBytes(received_command, 8);
+    receiveCommand[len] = '\0';
+
+    if (len == 4) {
+      int fret_num = received_command[3];
+      pressFret(fret_num);
+      int string_num = *(received_command + 1) - '0';
+      strum(string_num == 1, string_num == 2, string_num == 3, string_num == 4,
+            string_num == 5, string_num == 6);
+    }
+    else if (len == 8) {
+      int fret_num1 = received_command[3];
+      int fret_num2 = received_command[7];
+
+      pressFret(fret_num1);
+      pressFret(fret_num2);
+      strum(string_num1 == 1 || string_num2 == 1,
+            string_num1 == 2 || string_num2 == 2,
+            string_num1 == 3 || string_num2 == 3,
+            string_num1 == 4 || string_num2 == 4,
+            string_num1 == 5 || string_num2 == 5,
+            string_num1 == 6 || string_num2 == 6);
+    }
+  }
+}
+
 void loop() {
+  receiveCommand();
   if(CENTER_SERVO){
     s1.write(CENTER_ANGLE);
     s2.write(CENTER_ANGLE);

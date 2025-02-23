@@ -51,8 +51,7 @@ total_events = len(events)
 # }
 
 while event_index < total_events:
-    instruction_temp = ""
-    instruction_list = list(instruction_temp)
+    instruction_list = []
     # For all events with same timestamp
     played = False
     while event_index < total_events and events[event_index]["start"] == timestamp:
@@ -62,13 +61,15 @@ while event_index < total_events:
         event = events[event_index]
 
         instruction_list.append(event['comb'])
-        instruction = ''.join(instruction_list)
-
-        # arduino.write((instruction + "\n").encode())c
-        print(instruction)
         
         # print(f"At {event["start"]}ms: Play string {event["string"]} at fret {event["fret"]}")
         event_index += 1
+
+    instruction = ''.join(instruction_list)
+
+    if len(instruction_list) > 0:
+        # arduino.write((instruction + "\n").encode())
+        print(instruction)
 
     timestamp += 5
     precise_sleep(5)

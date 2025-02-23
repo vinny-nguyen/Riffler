@@ -1,0 +1,7 @@
+attrs==25.1.0
+cffi==1.17.1
+numpy==2.2.3
+pycparser==2.22
+PyGuitarPro==0.9.3
+pyserial==3.5
+sounddevice==0.5.1

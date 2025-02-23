@@ -133,46 +133,33 @@ void setup() {
 }
 
 void unpressFret(String cmd) {
-  if (cmd == "S3F0") {
+  if (cmd == "S6F0") {
 
-  }
-  else if (cmd == "S3F2") {
+  } else if (cmd == "S6F3") {
     
-  }
-  else if (cmd == "S2F0") {
+  } else if (cmd == "S5F0") {
     
-  }
-  else if (cmd == "S2F1") {
+  } else if (cmd == "S5F2") {
     
-  }
-  else if (cmd == "S2F2") {
+  } else if (cmd == "S4F0") {
     
-  }
-  else if (cmd == "S2F3") {
+  } else if (cmd == "S3F0") {
     
-  }
-  else if (cmd == "S1F0") {
+  } else if (cmd == "S3F2") {
     
-  }
-  else if (cmd == "S1F2") {
+  } else if (cmd == "S2F0") {
     
-  }
-  else if (cmd == "S1F3") {
+  } else if (cmd == "S2F1") {
     
-  }
-  else if (cmd == "S6F0") {
+  } else if (cmd == "S2F2") {
     
-  }
-  else if (cmd == "S6F3") {
+  } else if (cmd == "S2F3") {
     
-  }
-  else if (cmd == "S5F0") {
+  } else if (cmd == "S1F0") {
     
-  }
-  else if (cmd == "S5F2") {
+  } else if (cmd == "S1F2") {
     
-  }
-  else if (cmd == "S4F0") {
+  } else if (cmd == "S1F3") {
     
   }
 }
@@ -193,46 +180,33 @@ void pressFret(String cmd) {
     }
   }
 
-  if (cmd == "S3F0") {
+  if (cmd == "S6F0") {
 
-  }
-  else if (cmd == "S3F2") {
+  } else if (cmd == "S6F3") {
     
-  }
-  else if (cmd == "S2F0") {
+  } else if (cmd == "S5F0") {
     
-  }
-  else if (cmd == "S2F1") {
+  } else if (cmd == "S5F2") {
     
-  }
-  else if (cmd == "S2F2") {
+  } else if (cmd == "S4F0") {
     
-  }
-  else if (cmd == "S2F3") {
+  } else if (cmd == "S3F0") {
     
-  }
-  else if (cmd == "S1F0") {
+  } else if (cmd == "S3F2") {
     
-  }
-  else if (cmd == "S1F2") {
+  } else if (cmd == "S2F0") {
     
-  }
-  else if (cmd == "S1F3") {
+  } else if (cmd == "S2F1") {
     
-  }
-  else if (cmd == "S6F0") {
+  } else if (cmd == "S2F2") {
     
-  }
-  else if (cmd == "S6F3") {
+  } else if (cmd == "S2F3") {
     
-  }
-  else if (cmd == "S5F0") {
+  } else if (cmd == "S1F0") {
     
-  }
-  else if (cmd == "S5F2") {
+  } else if (cmd == "S1F2") {
     
-  }
-  else if (cmd == "S4F0") {
+  } else if (cmd == "S1F3") {
     
   }
 

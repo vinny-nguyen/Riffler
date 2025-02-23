@@ -1,4 +1,7 @@
-# Riffler
+# TheRiffler
+
+**Description**
+The Riffler - an Arduino-based guitar-playing robot that uses servomotors to simultaneously press frets and pluck strings. Our system includes a custom Python parser that converts Guitar Pro (.gp5) files storing guitar tablatures, which are essentially sheet music, but for guitars, into a structured JSON file for each song, detailing which frets and strings to play for each note. This data is transmitted in real time via Arduino’s serial connection from the Python script to trigger our calibrated servo positions. Featuring a curated collection of 20 Canadian classics, The Riffler will perform guitar songs live to honor our country and unite us as a community, as a country, and as C
 
 **Idea:** Guitar playing robot: With Arduino servomotors so it'll press on the frets and pluck the strings at the same time to play songs,
 the songs will be Canadian classics since everyone in Canada these days are becoming less and less patriotic, especially with the recent

@@ -35,12 +35,12 @@ int S1_START = 65;
 int S1_STOP = 108;
 int s1_pos = 0;
 
-int S2_START = 75; // 78
-int S2_STOP = 112; // 110
+int S2_START = 70; // 78
+int S2_STOP = 108; // 110
 int s2_pos = 0;
 
-int S3_START = 60;
-int S3_STOP = 102;
+int S3_START = 55;
+int S3_STOP = 101;
 int s3_pos = 0;
 
 int S4_START = 57;
@@ -51,8 +51,8 @@ int S5_START = 60;
 int S5_STOP = 102;
 int s5_pos = 0;
 
-int S6_START = 78;
-int S6_STOP = 119;
+int S6_START = 76;
+int S6_STOP = 120;
 int s6_pos = 0;
 
 int S3_OFFSET = 0;
@@ -133,6 +133,14 @@ void strum(int strum1, int strum2, int strum3, int strum4, int strum5, int strum
   }
 }
 
+void centerAll(){
+  s1.write(90);
+  s2.write(90);
+  s3.write(90);
+  s4.write(90);
+  s5.write(90);
+  s6.write(90);
+}
 
 void setup() {
   s1.attach(11);
@@ -150,6 +158,13 @@ void setup() {
   S5F2.attach(44);
   S6F3.attach(45);
   strum(0,0,0,0,0,0);
+  s1.write(90);
+  s2.write(90);
+  s3.write(90);
+  s4.write(90);
+  s5.write(90);
+  s6.write(90);
+
   Serial.begin(115200);
 }
 
@@ -248,6 +263,9 @@ void receiveCommand() {
             string_num1 == 4 || string_num2 == 4,
             string_num1 == 5 || string_num2 == 5,
             string_num1 == 6 || string_num2 == 6);
+    }
+    else {
+      centerAll();
     }
   }
 }

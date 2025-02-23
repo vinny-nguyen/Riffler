@@ -6,7 +6,7 @@ import serial
 
 from parse_guitar import file_name
 
-ARDUINO_PORT = "/dev/cu.usbmodem12201"
+ARDUINO_PORT = "/dev/cu.usbserial-1230"
 BAUD_RATE = 115200
 
 arduino = serial.Serial(ARDUINO_PORT, BAUD_RATE, timeout=1)
@@ -74,4 +74,5 @@ while event_index < total_events:
 
     timestamp += 5
     precise_sleep(5)
+arduino.write(("CENTR" + "\n").encode('ascii', 'ignore'))
 time.sleep(1)

@@ -62,8 +62,11 @@ int S6_OFFSET = 0;
 
 int TEST_STRUM_DELAY = 1000;
 
-int FRET_START = 45;
-int FRET_STOP = 105;
+int FRET_START = 105;
+int FRET_STOP = 45;
+
+// start 45
+// stop 105
 
 void strum(int strum1, int strum2, int strum3, int strum4, int strum5, int strum6){
   if (s1_pos == S1_START && strum1) 
@@ -198,10 +201,16 @@ void pressFret(String cmd) {
     }
   }
 
-  for (int i = 0; i < command_cnt; i++) {
-    if (command_pressed_keys[i][1] == cmd[1] && command_pressed_values[i]) {
-      unpressFret(command_pressed_keys[i]);
+  // If '0' fret command is received, unpress all frets on the same string
+  if (cmd[3] == '0') {
+    // Unpress all frets of the same string
+    for (int i = 0; i < command_cnt; i++) {
+      if (command_pressed_keys[i][1] == cmd[1] && command_pressed_values[i]) {
+        unpressFret(command_pressed_keys[i]);
+        command_pressed_values[i] = false;
+      }
     }
+    return;
   }
 
   if (cmd == "S6F3") {
@@ -238,8 +247,7 @@ void receiveCommand() {
     int len = received_command.length();
 
     if (len == 4) {
-      if (received_command[3] != '0')
-        pressFret(received_command);
+      pressFret(received_command);
       int string_num = received_command[1] - '0';
       strum(string_num == 1, string_num == 2, string_num == 3, string_num == 4,
             string_num == 5, string_num == 6);
@@ -249,10 +257,8 @@ void receiveCommand() {
       String cmd1 = received_command.substring(0, 4);
       String cmd2 = received_command.substring(4, 8);
 
-      if (cmd1[3] != '0')
-        pressFret(cmd1);
-      if (cmd2[3] != '0')
-        pressFret(cmd2);
+      pressFret(cmd1);
+      pressFret(cmd2);
 
       int string_num1 = cmd1[1] - '0';
       int string_num2 = cmd2[1] - '0';

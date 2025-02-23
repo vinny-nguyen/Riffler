@@ -6,7 +6,7 @@ import serial
 
 from parse_guitar import file_name
 
-ARDUINO_PORT = "/dev/cu.usbmodem12201"
+ARDUINO_PORT = "/dev/cu.usbserial-1230"
 BAUD_RATE = 115200
 
 arduino = serial.Serial(ARDUINO_PORT, BAUD_RATE, timeout=1)
@@ -51,6 +51,7 @@ total_events = len(events)
 # }
 
 while event_index < total_events:
+    arduino.reset_input_buffer()
     instruction_list = []
     # For all events with same timestamp
     played = False
@@ -68,9 +69,10 @@ while event_index < total_events:
     instruction = ''.join(instruction_list)
 
     if len(instruction_list) > 0:
-        arduino.write((instruction + "\n").encode('ascii'))
+        arduino.write((instruction + "\n").encode('ascii', 'ignore'))
         print(instruction)
 
     timestamp += 5
     precise_sleep(5)
+arduino.write(("CENTR" + "\n").encode('ascii', 'ignore'))
 time.sleep(1)

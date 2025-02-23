@@ -10,6 +10,12 @@ Servo s6;
 const int CMD_SIZE = 4;
 String received_command;
 
+String command_pressed_keys[] = {"S3F0", "S3F2", "S2F0", "S2F1", "S2F2", "S2F3", "S1F0", "S1F2", "S1F3",
+                        "S6F0", "S6F3", "S5F0", "S5F2", "S4F0"};
+bool command_pressed_values[] = {false, false, false, false, false, false, false, false, false, false,
+                                 false, false, false, false};
+const int command_cnt = 14;
+
 bool CENTER_SERVO = true;
 int CENTER_ANGLE = 90;
 
@@ -126,8 +132,7 @@ void setup() {
   strum(0,0,0,0,0,0);
 }
 
-void pressFret(String cmd) {
-  // S{string #}F{fret #}
+void unpressFret(String cmd) {
   if (cmd == "S3F0") {
 
   }
@@ -169,6 +174,72 @@ void pressFret(String cmd) {
   }
   else if (cmd == "S4F0") {
     
+  }
+}
+
+void pressFret(String cmd) {
+  // S{string #}F{fret #}
+
+  for (int i = 0; i < command_cnt; i++) {
+    if (command_pressed_keys[i] == cmd) {
+      if (command_pressed_values[i])
+        return;
+    }
+  }
+
+  for (int i = 0; i < command_cnt; i++) {
+    if (command_pressed_keys[i][1] == cmd[1] && command_pressed_values[i]) {
+      unpressFret(command_pressed_keys[i]);
+    }
+  }
+
+  if (cmd == "S3F0") {
+
+  }
+  else if (cmd == "S3F2") {
+    
+  }
+  else if (cmd == "S2F0") {
+    
+  }
+  else if (cmd == "S2F1") {
+    
+  }
+  else if (cmd == "S2F2") {
+    
+  }
+  else if (cmd == "S2F3") {
+    
+  }
+  else if (cmd == "S1F0") {
+    
+  }
+  else if (cmd == "S1F2") {
+    
+  }
+  else if (cmd == "S1F3") {
+    
+  }
+  else if (cmd == "S6F0") {
+    
+  }
+  else if (cmd == "S6F3") {
+    
+  }
+  else if (cmd == "S5F0") {
+    
+  }
+  else if (cmd == "S5F2") {
+    
+  }
+  else if (cmd == "S4F0") {
+    
+  }
+
+  for (int i = 0; i < command_cnt; i++) {
+    if (command_pressed_keys[i] == cmd) {
+      command_pressed_values[i] = true;
+    }
   }
 }
 

@@ -9,7 +9,7 @@ from parse_guitar import file_name
 ARDUINO_PORT = "COM3"
 BAUD_RATE = 115200
 
-arduino = serial.Serial(ARDUINO_PORT, BAUD_RATE, timeout=1)
+# arduino = serial.Serial(ARDUINO_PORT, BAUD_RATE, timeout=1)
 time.sleep(2)
 
 def precise_sleep(duration_ms):
@@ -32,26 +32,26 @@ timestamp = 0 # In milliseconds
 event_index = 0
 total_events = len(events)
 
-mapping = {
-    "S3F0": 0,
-    "S3F2": 1,
-    "S2F0": 2,
-    "S2F1": 3,
-    "S2F2": 4,
-    "S2F3": 5,
-    "S1F0": 6,
-    "S1F2": 7,
-    "S1F3": 8,
-    # Now onward are bass notes
-    "S6F0": 9,
-    "S6F3": 10,
-    "S5F0": 11,
-    "S5F2": 12,
-    "S4F0": 13,
-}
+# mapping = {
+#     "S3F0": 0,
+#     "S3F2": 1,
+#     "S2F0": 2,
+#     "S2F1": 3,
+#     "S2F2": 4,
+#     "S2F3": 5,
+#     "S1F0": 6,
+#     "S1F2": 7,
+#     "S1F3": 8,
+#     # Now onward are bass notes
+#     "S6F0": 9,
+#     "S6F3": 10,
+#     "S5F0": 11,
+#     "S5F2": 12,
+#     "S4F0": 13,
+# }
 
 while event_index < total_events:
-    instruction_temp = "00000000000000"
+    instruction_temp = ""
     instruction_list = list(instruction_temp)
     # For all events with same timestamp
     played = False
@@ -61,10 +61,10 @@ while event_index < total_events:
             played = True
         event = events[event_index]
 
-        instruction_list[mapping[event['comb']]] = '1'
+        instruction_list.append(event['comb'])
         instruction = ''.join(instruction_list)
 
-        arduino.write((instruction + "\n").encode())
+        # arduino.write((instruction + "\n").encode())c
         print(instruction)
         
         # print(f"At {event["start"]}ms: Play string {event["string"]} at fret {event["fret"]}")

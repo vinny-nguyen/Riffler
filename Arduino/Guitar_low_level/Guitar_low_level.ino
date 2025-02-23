@@ -10,31 +10,31 @@ Servo s6;
 bool CENTER_SERVO = true;
 int CENTER_ANGLE = 90;
 
-int STARTING_ANGLE = 75; // 65
+int STARTING_ANGLE = 65; // 65
 int STRUM_ANGLE = 180; // 100
 
-int S1_START = 71;
-int S1_STOP = 105;
+int S1_START = 65;
+int S1_STOP = 108;
 int s1_pos = 0;
 
-int S2_START = 78;
-int S2_STOP = 110;
+int S2_START = 75; // 78
+int S2_STOP = 112; // 110
 int s2_pos = 0;
 
 int S3_START = 60;
-int S3_STOP = 100;
+int S3_STOP = 102;
 int s3_pos = 0;
 
-int S4_START = 70;
-int S4_STOP = 113;
+int S4_START = 57;
+int S4_STOP = 102;
 int s4_pos = 0;
 
-int S5_START = 70;
-int S5_STOP = 105;
+int S5_START = 60;
+int S5_STOP = 102;
 int s5_pos = 0;
 
-int S6_START = 77;
-int S6_STOP = 120;
+int S6_START = 78;
+int S6_STOP = 119;
 int s6_pos = 0;
 
 int S3_OFFSET = 0;
@@ -42,7 +42,7 @@ int S4_OFFSET = 0;
 int S5_OFFSET = 0;
 int S6_OFFSET = 0;
 
-int TEST_STRUM_DELAY = 500;
+int TEST_STRUM_DELAY = 1000;
 
 void strum(int strum1, int strum2, int strum3, int strum4, int strum5, int strum6){
   if (s1_pos == S1_START && strum1) 
@@ -131,6 +131,7 @@ void loop() {
     s4.write(CENTER_ANGLE);
     s5.write(CENTER_ANGLE);
     s6.write(CENTER_ANGLE);
+
   }
   else{
   strum(0,0,0,0,0,1);

@@ -2,8 +2,15 @@ import json
 import time
 import numpy as np
 import sounddevice as sd
+import serial
 
 from parse_guitar import file_name
+
+ARDUINO_PORT = "COM3"
+BAUD_RATE = 115200
+
+arduino = serial.Serial(ARDUINO_PORT, BAUD_RATE, timeout=1)
+time.sleep(2)
 
 def precise_sleep(duration_ms):
     start = time.perf_counter_ns()
@@ -57,6 +64,7 @@ while event_index < total_events:
         instruction_list[mapping[event['comb']]] = '1'
         instruction = ''.join(instruction_list)
 
+        arduino.write((instruction + "\n").encode())
         print(instruction)
         
         # print(f"At {event["start"]}ms: Play string {event["string"]} at fret {event["fret"]}")

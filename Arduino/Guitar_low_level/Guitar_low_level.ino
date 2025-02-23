@@ -8,7 +8,7 @@ Servo s5;
 Servo s6;
 
 const int CMD_SIZE = 4;
-char received_command[9];
+String received_command;
 
 bool CENTER_SERVO = true;
 int CENTER_ANGLE = 90;
@@ -126,7 +126,7 @@ void setup() {
   strum(0,0,0,0,0,0);
 }
 
-void pressFret(const char *cmd) {
+void pressFret(String cmd) {
   // S{string #}F{fret #}
   if (cmd == "S3F0") {
 
@@ -172,39 +172,29 @@ void pressFret(const char *cmd) {
   }
 }
 
-void releaseALlFrets() {
-  // Add implementation
-}
-
 void receiveCommand() {
   if (Serial.available() >= CMD_SIZE) {
-    int len = Serial.readBytes(received_command, 8);
-    received_command[len] = '\0';
+    received_command = Serial.readStringUntil('\n');
+    received_command.trim();
 
-    releaseALlFrets();
+    int len = received_command.length();
 
     if (len == 4) {
       pressFret(received_command);
-      int string_num = *(received_command + 1) - '0';
+      int string_num = received_command[1] - '0';
       strum(string_num == 1, string_num == 2, string_num == 3, string_num == 4,
             string_num == 5, string_num == 6);
     }
     // With bass notes
     else if (len == 8) {
-      char cmd1[5];
-      char cmd2[5];
-
-      strncpy(cmd1, received_command, 4);
-      strncpy(cmd2, received_command + 4, 4);
-
-      cmd1[4] = '\0';
-      cmd2[4] = '\0';
+      String cmd1 = received_command.substring(0, 4);
+      String cmd2 = received_command.substring(4, 8);
 
       pressFret(cmd1);
       pressFret(cmd2);
 
-      int string_num1 = *(received_command + 1) - '0';
-      int string_num2 = *(received_command + 5) - '0';
+      int string_num1 = cmd1[1] - '0';
+      int string_num2 = cmd2[1] - '0';
 
       strum(string_num1 == 1 || string_num2 == 1,
             string_num1 == 2 || string_num2 == 2,

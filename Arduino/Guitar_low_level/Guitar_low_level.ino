@@ -8,7 +8,7 @@ Servo s5;
 Servo s6;
 
 const int CMD_SIZE = 4;
-char received_command[9]
+char received_command[9];
 
 bool CENTER_SERVO = true;
 int CENTER_ANGLE = 90;
@@ -126,28 +126,86 @@ void setup() {
   strum(0,0,0,0,0,0);
 }
 
-void pressFret(int fret_num) {
+void pressFret(const char *cmd) {
+  // S{string #}F{fret #}
+  if (cmd == "S3F0") {
+
+  }
+  else if (cmd == "S3F2") {
+    
+  }
+  else if (cmd == "S2F0") {
+    
+  }
+  else if (cmd == "S2F1") {
+    
+  }
+  else if (cmd == "S2F2") {
+    
+  }
+  else if (cmd == "S2F3") {
+    
+  }
+  else if (cmd == "S1F0") {
+    
+  }
+  else if (cmd == "S1F2") {
+    
+  }
+  else if (cmd == "S1F3") {
+    
+  }
+  else if (cmd == "S6F0") {
+    
+  }
+  else if (cmd == "S6F3") {
+    
+  }
+  else if (cmd == "S5F0") {
+    
+  }
+  else if (cmd == "S5F2") {
+    
+  }
+  else if (cmd == "S4F0") {
+    
+  }
+}
+
+void releaseALlFrets() {
   // Add implementation
 }
 
 void receiveCommand() {
-  if (Serial.available() >= 4) {
+  if (Serial.available() >= CMD_SIZE) {
     int len = Serial.readBytes(received_command, 8);
-    receiveCommand[len] = '\0';
+    received_command[len] = '\0';
+
+    releaseALlFrets();
 
     if (len == 4) {
-      int fret_num = received_command[3];
-      pressFret(fret_num);
+      pressFret(received_command);
       int string_num = *(received_command + 1) - '0';
       strum(string_num == 1, string_num == 2, string_num == 3, string_num == 4,
             string_num == 5, string_num == 6);
     }
+    // With bass notes
     else if (len == 8) {
-      int fret_num1 = received_command[3];
-      int fret_num2 = received_command[7];
+      char cmd1[5];
+      char cmd2[5];
 
-      pressFret(fret_num1);
-      pressFret(fret_num2);
+      strncpy(cmd1, received_command, 4);
+      strncpy(cmd2, received_command + 4, 4);
+
+      cmd1[4] = '\0';
+      cmd2[4] = '\0';
+
+      pressFret(cmd1);
+      pressFret(cmd2);
+
+      int string_num1 = *(received_command + 1) - '0';
+      int string_num2 = *(received_command + 5) - '0';
+
       strum(string_num1 == 1 || string_num2 == 1,
             string_num1 == 2 || string_num2 == 2,
             string_num1 == 3 || string_num2 == 3,

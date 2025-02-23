@@ -11,7 +11,7 @@ const int CMD_SIZE = 4;
 String received_command;
 
 String command_pressed_keys[] = {"S3F0", "S3F2", "S2F0", "S2F1", "S2F2", "S2F3", "S1F0", "S1F2", "S1F3",
-                        "S6F0", "S6F3", "S5F0", "S5F2", "S4F0"};
+                                 "S6F0", "S6F3", "S5F0", "S5F2", "S4F0"};
 bool command_pressed_values[] = {false, false, false, false, false, false, false, false, false, false,
                                  false, false, false, false};
 const int command_cnt = 14;
@@ -130,6 +130,7 @@ void setup() {
   s5.attach(10);
   s6.attach(3);
   strum(0,0,0,0,0,0);
+  Serial.begin(115200);
 }
 
 void unpressFret(String cmd) {
@@ -221,6 +222,7 @@ void receiveCommand() {
   if (Serial.available() >= CMD_SIZE) {
     received_command = Serial.readStringUntil('\n');
     received_command.trim();
+    Serial.println(received_command);
 
     int len = received_command.length();
 
